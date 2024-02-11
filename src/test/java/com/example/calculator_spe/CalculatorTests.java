@@ -20,33 +20,33 @@ public class CalculatorTests {
 
     @Test
     public void testFactorial() {
-        // Test factorial of 5
-        int expectedResult = 120;
+        // Test factorial of 4
+        int expectedResult = 24;
         int actualResult = calculator.factorial(5);
         assertEquals(expectedResult, actualResult);
     }
 
     @Test
     public void testLogarithmic() {
-        // Test logarithm of 10
-        double expectedResult = 2.302585092994046;
-        double actualResult = calculator.logarithmic(10);
+        // Test logarithm of 5
+        double expectedResult = 1.60943791243;
+        double actualResult = calculator.logarithmic(5);
         assertEquals(expectedResult, actualResult, 0.0001);
     }
 
     @Test
     public void testSquareRoot() {
-        // Test square root of 16
-        double expectedResult = 4.0;
-        double actualResult = calculator.squareRoot(16);
+        // Test square root of 49
+        double expectedResult = 7.0;
+        double actualResult = calculator.squareRoot(49);
         assertEquals(expectedResult, actualResult);
     }
 
     @Test
     public void testPower() {
-        // Test power of 2 to the exponent of 3
-        double expectedResult = 8.0;
-        double actualResult = calculator.power(2, 3);
+        // Test power of 4 to the exponent of 3
+        double expectedResult = 64.0;
+        double actualResult = calculator.power(4, 3);
         assertEquals(expectedResult, actualResult);
     }
 }
