@@ -1,12 +1,9 @@
 package com.example.calculator_spe;
 
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.web.bind.annotation.*;
 
 
 @CrossOrigin(origins="http://localhost:3000/")
-@SpringBootApplication
 @RestController
 public class Calculator{
 
@@ -31,10 +28,6 @@ public class Calculator{
     @GetMapping("/power/{base}/{exponent}")
     public double power(@PathVariable double base, @PathVariable double exponent) {
         return Math.pow(base, exponent);
-    }
-
-    public static void main(String[] args) {
-        SpringApplication.run(Calculator.class, args);
     }
 }
 
