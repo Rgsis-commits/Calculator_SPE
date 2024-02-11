@@ -46,3 +46,7 @@
         state: started
         ports:
           - "80:8080"  # Map container port 8080 to host port 80
+    
+    - name: Example task to use AWS access keys
+      debug:
+        msg: "Access key ID: {{ lookup('env', 'AWS_ACCESS_KEY_ID') }}, Secret access key: {{ lookup('env', 'AWS_SECRET_ACCESS_KEY') }}"
