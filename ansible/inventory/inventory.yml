@@ -1,4 +1,4 @@
 all:
   hosts:
     webserver:
-      ansible_host: 13.60.29.215
+      ansible_host: 16.171.26.117
