@@ -1,32 +1,27 @@
-# Use an official Maven image as the base image
-FROM maven:3.8.5-jdk-17 AS build
+# Use the official Maven image as the base image
+FROM maven:3.8.3-openjdk-17 AS build
 
-# Set the working directory in the container
+# Set the working directory inside the container
 WORKDIR /app
 
-# Copy the Maven project's pom.xml file
+# Copy the Maven project files to the container
 COPY pom.xml .
-
-# Download the Maven dependencies specified in pom.xml and cache them in a layer
-RUN mvn dependency:go-offline -B
-
-# Copy the entire project source code to the container
 COPY src ./src
 
 # Build the Maven project
-RUN mvn package -DskipTests
+RUN mvn clean package
 
-# Use a lightweight JDK image as the base image for the runtime environment
-FROM adoptopenjdk:17-jre-hotspot
+# Use the official OpenJDK image as the base image for the final runtime image
+FROM openjdk:17-jdk-alpine
 
-# Set the working directory in the container
+# Set the working directory inside the container
 WORKDIR /app
 
-# Copy the JAR file built in the previous stage to the container
-COPY --from=build /app/target/*.jar app.jar
+# Copy the compiled Java application from the build stage to the container
+COPY --from=build /app/target/*.jar ./app.jar
 
-# Expose the port your application runs on (assuming it's 8080)
+# Expose the port that your application will listen on
 EXPOSE 8080
 
-# Specify the command to run your application when the container starts
+# Define the command to run your application
 CMD ["java", "-jar", "app.jar"]
