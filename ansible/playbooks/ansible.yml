@@ -36,13 +36,13 @@
     
     - name: Pull Docker image from Docker Hub
       docker_image:
-        name: "{{ DOCKER_USERNAME }}/calculator"
+        name: "rishavchandel/calculator"
         source: pull
     
     - name: Run Docker container
       docker_container:
         name: calculator_container
-        image: "{{ DOCKER_USERNAME }}/calculator"
+        image: "rishavchandel/calculator"
         state: started
         ports:
           - "80:8080"  # Map container port 8080 to host port 80
