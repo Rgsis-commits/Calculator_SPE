@@ -22,7 +22,7 @@ public class CalculatorTests {
     public void testFactorial() {
         // Test factorial of 4
         int expectedResult = 24;
-        int actualResult = calculator.factorial(5);
+        int actualResult = calculator.factorial(4);
         assertEquals(expectedResult, actualResult);
     }
 
