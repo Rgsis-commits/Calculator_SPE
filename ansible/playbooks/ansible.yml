@@ -55,6 +55,7 @@
         name: rishavchandel/calculator
         source: pull
         state: present
+        tag: latest
       tags: 
         - docker
 
