@@ -1,10 +1,8 @@
 all:
   hosts:
     webserver:
-      ansible_host: 16.171.206.166
+      ansible_host: 16.171.2.105
       ansible_user: ubuntu
-      ansible_ssh_common_args: '-o StrictHostKeyChecking=no'
-
-      #ansible_ssh_private_key_file: /home/vboxuser/.ssh
-      #ansible_ssh_common_args: '-o ForwardAgent=no'
+      ansible_password: ubuntu12
+      
 
