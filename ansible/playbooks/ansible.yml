@@ -56,6 +56,7 @@
         source: pull
         state: present
         tag: latest
+        force_pull: yes
       tags: 
         - docker
 
@@ -67,5 +68,6 @@
         restart_policy: always
         published_ports:
           - "8084:8080"
+        container_default_behavior: "compatibility"
       tags: 
         - docker
