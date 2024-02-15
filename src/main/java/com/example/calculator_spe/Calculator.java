@@ -8,6 +8,8 @@ public class Calculator{
 
     @GetMapping("/factorial/{number}")
     public int factorial(@PathVariable int number) {
+        if (number == 1)
+            return 1;
         if (number == 0)
             return -1;
         else
