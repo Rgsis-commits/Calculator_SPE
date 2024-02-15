@@ -30,6 +30,19 @@
       tags: 
         - docker
 
+    - name: Stop the existing container
+      docker_container:
+        name: calculator
+        state: stopped
+      register: stopped_container
+      ignore_errors: yes  # Ignore errors if the container is not running
+
+    - name: Remove the existing container
+      docker_container:
+        name: calculator
+        state: absent
+      when: stopped_container is success  # Only remove if the container was stopped successfully
+
     - name: Run Docker container
       docker_container:
         name: calculator
@@ -41,4 +54,3 @@
         container_default_behavior: "compatibility"
       tags: 
         - docker
-
