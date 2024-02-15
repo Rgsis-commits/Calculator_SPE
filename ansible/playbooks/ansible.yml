@@ -9,7 +9,7 @@
   tasks:
     - name: Start Docker service
       service:
-        name: docker.service
+        name: docker
         state: started
 
     - name: Ensure docker image is present
