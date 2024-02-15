@@ -2,6 +2,8 @@
 - name: Deploy Docker container on Ubuntu VM
   hosts: all
   become: true
+  vars:
+    ansible_ssh_common_args: "-o StrictHostKeyChecking=no"
   tasks:    
     - name: Start Docker service
       service:
