@@ -29,9 +29,9 @@
 - name: Deploy Docker container on Ubuntu VM
   hosts: all
   become: true
-  vars:
-    ansible_ssh_common_args: "-o StrictHostKeyChecking=no"
-    ansible_python_interpreter: /usr/bin/python3.10
+  # vars:
+  #   ansible_ssh_common_args: "-o StrictHostKeyChecking=no"
+  #   ansible_python_interpreter: /usr/bin/python3.10
   
   tasks:    
     - name: Start Docker service
