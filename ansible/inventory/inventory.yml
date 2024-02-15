@@ -4,5 +4,5 @@ all:
       ansible_host: 16.171.2.105
       ansible_user: ubuntu
       ansible_password: ubuntu12
-      
+      ansible_python_interpreter: /usr/bin/python3
 
