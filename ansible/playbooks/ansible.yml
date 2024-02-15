@@ -62,9 +62,8 @@
     - name: Run Docker container
       docker_container:
         name: calculator_backend_container
-        image: rishavchandel/calculator
+        image: rishavchandel/calculator:latest
         state: started
-        tag: latest
         restart_policy: always
         published_ports:
           - "8084:8080"
