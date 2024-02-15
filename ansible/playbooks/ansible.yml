@@ -2,33 +2,7 @@
 - name: Deploy Docker container on Ubuntu VM
   hosts: all
   become: true
-  tasks:
-    - name: Install Docker dependencies
-      apt:
-        name: "{{ item }}"
-        state: present
-      loop:
-        - apt-transport-https
-        - ca-certificates
-        - curl
-        - gnupg
-        - lsb-release
-    
-    - name: Add Docker GPG key
-      apt_key:
-        url: https://download.docker.com/linux/ubuntu/gpg
-        state: present
-    
-    - name: Add Docker APT repository
-      apt_repository:
-        repo: deb [arch=amd64] https://download.docker.com/linux/ubuntu focal stable
-        state: present
-    
-    - name: Install Docker
-      apt:
-        name: docker-ce
-        state: present
-    
+  tasks:    
     - name: Start Docker service
       service:
         name: docker
@@ -45,8 +19,6 @@
         image: "rishavchandel/calculator"
         state: started
         ports:
-          - "80:8080"  # Map container port 8080 to host port 80
+          - "8084:8080"
     
-    - name: Example task to use AWS access keys
-      debug:
-        msg: "Access key ID: {{ lookup('env', 'AWS_ACCESS_KEY_ID') }}, Secret access key: {{ lookup('env', 'AWS_SECRET_ACCESS_KEY') }}"
+  
