@@ -32,7 +32,7 @@
 
     - name: Run Docker container
       docker_container:
-        name: calculator
+        name: rishavchandel/calculator
         image: rishavchandel/calculator:latest
         state: started
         restart_policy: always
