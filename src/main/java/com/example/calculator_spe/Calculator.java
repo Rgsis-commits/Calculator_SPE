@@ -2,8 +2,7 @@ package com.example.calculator_spe;
 
 import org.springframework.web.bind.annotation.*;
 
-
-@CrossOrigin(origins="http://16.171.153.220:8085/")
+@CrossOrigin(origins = {"http://16.171.153.220:8085", "http://16.171.153.220:8085/otherpath"})
 @RestController
 public class Calculator{
 
