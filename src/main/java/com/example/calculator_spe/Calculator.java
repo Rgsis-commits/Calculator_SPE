@@ -29,7 +29,7 @@ public class Calculator{
 
     @GetMapping("/power/{base}/{exponent}")
     public double power(@PathVariable double base, @PathVariable double exponent) {
-        return Math.pow(base, exponent);
+        return Math.pow(base, exponent+1);
     }
 }
 
