@@ -64,6 +64,7 @@
         name: calculator_backend_container
         image: rishavchandel/calculator
         state: started
+        tag: latest
         restart_policy: always
         published_ports:
           - "8084:8080"
