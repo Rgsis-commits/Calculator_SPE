@@ -1,7 +1,7 @@
 all:
   hosts:
     webserver:
-      ansible_host: 16.171.2.105
+      ansible_host: 13.49.230.253
       ansible_user: ubuntu
       ansible_password: ubuntu12
       ansible_python_interpreter: /usr/bin/python3
