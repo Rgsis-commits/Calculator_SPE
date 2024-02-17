@@ -21,10 +21,9 @@
         
     - name: Pull Docker image from Docker Hub
       docker_image:
-        name: rishavchandel/calculator
+        name: rishavchandel/calculator:latest
         source: pull
         state: present
-        tag: latest
       tags: 
         - docker
 
