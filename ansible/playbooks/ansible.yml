@@ -19,7 +19,7 @@
       tags: 
         - docker
         
-      - name: Pull Docker image from Docker Hub
+    - name: Pull Docker image from Docker Hub
       docker_image:
         name: rishavchandel/calculator
         source: pull
