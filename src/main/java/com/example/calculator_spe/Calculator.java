@@ -9,8 +9,6 @@ public class Calculator{
     @GetMapping("/factorial/{number}")
     public int factorial(@PathVariable int number) {
         if (number == 0)
-            return -1;
-        else if (number == 1)
             return 1;
         else
             return (number * factorial(number - 1));
@@ -29,7 +27,7 @@ public class Calculator{
 
     @GetMapping("/power/{base}/{exponent}")
     public double power(@PathVariable double base, @PathVariable double exponent) {
-        return Math.pow(base, exponent+1);
+        return Math.pow(base, exponent);
     }
 }
 
