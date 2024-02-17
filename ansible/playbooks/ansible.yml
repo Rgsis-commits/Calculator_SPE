@@ -21,15 +21,6 @@
       tags: 
         - docker
 
-    - name: Pull Docker image from Docker Hub
-      docker_image:
-        name: rishavchandel/calculator
-        source: pull
-        state: present
-        tag: latest
-      tags: 
-        - docker
-
     - name: Stop the existing container
       docker_container:
         name: calculator
@@ -42,6 +33,15 @@
         name: calculator
         state: absent
       when: stopped_container is success  # Only remove if the container was stopped successfully
+
+      - name: Pull Docker image from Docker Hub
+      docker_image:
+        name: rishavchandel/calculator
+        source: pull
+        state: present
+        tag: latest
+      tags: 
+        - docker
 
     - name: Run Docker container
       docker_container:
