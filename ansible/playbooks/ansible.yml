@@ -44,7 +44,7 @@
         state: started
         restart_policy: always
         published_ports:
-          - "8084:8080"
+          - "8086:8080"
         container_default_behavior: "compatibility"
       ignore_errors: true
       register: docker_result
