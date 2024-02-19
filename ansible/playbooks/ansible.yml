@@ -28,6 +28,15 @@
       tags: 
         - docker
 
+    - name: Check if process is listening on port 8084
+      shell: "lsof -t -i:8084"
+      register: pid_result
+      ignore_errors: true
+    
+    - name: Kill process listening on port 8084
+      shell: "kill -9 {{ pid_result.stdout }}"
+      when: pid_result.rc == 0
+    
     - name: Run Docker container
       docker_container:
         name: calculator
@@ -37,9 +46,6 @@
         published_ports:
           - "8084:8080"
         container_default_behavior: "compatibility"
+      ignore_errors: true
       register: docker_result
-      failed_when: docker_result.stderr | search("Bind for 0.0.0.0:8084 failed")
-      ignore_errors: yes
-      tags: 
-        - docker
 
