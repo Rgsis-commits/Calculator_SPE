@@ -26,7 +26,7 @@
         name: rishavchandel/calculator:latest
         source: pull
         state: present
-        force: yes
+        force_source: yes
       tags: 
         - docker
 
