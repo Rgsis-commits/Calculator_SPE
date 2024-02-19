@@ -37,5 +37,9 @@
         published_ports:
           - "8084:8080"
         container_default_behavior: "compatibility"
+      register: docker_result
+      failed_when: docker_result.stderr | search("Bind for 0.0.0.0:8084 failed")
+      ignore_errors: yes
       tags: 
         - docker
+
