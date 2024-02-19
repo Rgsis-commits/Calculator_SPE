@@ -26,7 +26,7 @@
         name: rishavchandel/calculator:latest
         source: pull
         state: present
-        force_source: yes
+        force_tag: latest
       tags: 
         - docker
 
@@ -50,4 +50,3 @@
         container_default_behavior: "compatibility"
       ignore_errors: true
       register: docker_result
-
