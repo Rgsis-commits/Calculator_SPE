@@ -1,4 +1,4 @@
-package com.example.calculator;
+package com.example.calculator_spe;
 
 import org.springframework.web.filter.CorsFilter;
 import org.springframework.web.cors.CorsConfiguration;
