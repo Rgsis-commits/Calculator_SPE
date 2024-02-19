@@ -2,7 +2,6 @@ package com.example.calculator_spe;
 
 import org.springframework.web.bind.annotation.*;
 
-@CrossOrigin(origins = {"http://localhost:3000"})
 @RestController
 public class Calculator{
 
