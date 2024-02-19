@@ -28,12 +28,12 @@
       tags: 
         - docker
 
-    - name: Check if process is listening on port 8084
-      shell: "lsof -t -i:8086"
+    - name: Check if process is listening on port 8087
+      shell: "lsof -t -i:8087"
       register: pid_result
       ignore_errors: true
     
-    - name: Kill process listening on port 8086
+    - name: Kill process listening on port 8087
       shell: "kill -9 {{ pid_result.stdout }}"
       when: pid_result.rc == 0
     
@@ -44,7 +44,7 @@
         state: started
         restart_policy: always
         published_ports:
-          - "8086:8080"
+          - "8087:8080"
         container_default_behavior: "compatibility"
       ignore_errors: true
       register: docker_result
