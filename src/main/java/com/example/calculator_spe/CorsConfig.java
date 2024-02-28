@@ -15,7 +15,7 @@ public class CorsConfig {
         CorsConfiguration config = new CorsConfiguration();
 
         // Allow requests from your frontend domain
-        config.addAllowedOrigin("http://16.171.133.14:8086");
+        config.addAllowedOrigin("http://51.20.9.166:8086");
 
         // Allow other necessary CORS configurations
         config.addAllowedHeader("*");
